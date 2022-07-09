@@ -6,33 +6,30 @@ import { MdOutlineBusinessCenter } from 'react-icons/md'
 import Image from 'next/image'
 
 interface HeaderProps {}
-
-export const Header: React.FC<HeaderProps> = () => {
-  const options = [
-    {
-      title: 'Discover',
-      Icon: AiOutlineCompass,
-    },
-    {
-      title: 'People',
-      Icon: BsPeople,
-    },
-    {
-      title: 'Learning',
-      Icon: BsBook,
-    },
-    {
-      title: 'Jobs',
-      Icon: MdOutlineBusinessCenter,
-    },
-  ]
+const options = [
+  {
+    title: 'Discover',
+    Icon: AiOutlineCompass,
+  },
+  {
+    title: 'People',
+    Icon: BsPeople,
+  },
+  {
+    title: 'Learning',
+    Icon: BsBook,
+  },
+  {
+    title: 'Jobs',
+    Icon: MdOutlineBusinessCenter,
+  },
+]
+const Header: React.FC<HeaderProps> = () => {
   return (
     <>
       <nav className="h-[80px] flex items-center px-4 justify-between">
-        {/** Mobile Menu */}
-        <MobileMenu />
         {/** Logo */}
-        <div className="hidden md:block">
+        <div className="">
           <Image
             height={65}
             width={110}
@@ -40,7 +37,8 @@ export const Header: React.FC<HeaderProps> = () => {
             alt="Linkedin blue logo"
           />
         </div>
-
+        {/** Mobile Menu */}
+        <MobileMenu />
         {/** Desktop options */}
         <div className="flex items-center md:w-[500px] justify-between">
           {options.map((option) => (
@@ -61,3 +59,5 @@ export const Header: React.FC<HeaderProps> = () => {
     </>
   )
 }
+
+export { options, Header }
