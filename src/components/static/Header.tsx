@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = () => {
     <>
       <nav className="h-[80px] flex items-center px-4 justify-between">
         {/** Logo */}
-        <div className="">
+        <div className="hidden md:block">
           <Image
             height={65}
             width={110}
