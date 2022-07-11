@@ -27,7 +27,7 @@ const options = [
 const Header: React.FC<HeaderProps> = () => {
   return (
     <>
-      <nav className="h-[80px] flex items-center px-4 justify-between">
+      <nav className="h-[80px] flex items-center px-4 justify-between max-w-screen-2xl mx-auto">
         {/** Logo */}
         <div className="hidden md:block">
           <Image
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
           {options.map((option) => (
             <div
               key={option.title}
-              className="flex-col items-center justify-center hover:text-grey-700 cursor-pointer hidden md:flex"
+              className="flex-col items-center justify-center hidden cursor-pointer hover:text-grey-700 md:flex"
             >
               <option.Icon className="text-2xl" />
               <Typography>{option.title}</Typography>
