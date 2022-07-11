@@ -14,17 +14,17 @@ interface MobileMenuProps {}
 export const MobileMenu: React.FC<MobileMenuProps> = () => {
   return (
     <>
-      <Menu offset={7} placement="bottom">
+      <Menu offset={7} placement="bottom-end">
         <MenuHandler className="md:hidden">
           <IconButton variant='outlined'>
-            <AiOutlineMenu className="text-2xl cursor-pointer  dark:text-white" />
+            <AiOutlineMenu className="text-2xl cursor-pointer dark:text-white" />
           </IconButton>
         </MenuHandler>
-        <MenuList>
+        <MenuList className="dark:bg-grey-800 dark:text-white">
           {options.map((option) => (
             <>
               <MenuItem key={option.title} className="flex items-center">
-                <option.Icon className='text-2xl mr-2'/>
+                <option.Icon className='mr-2 text-2xl'/>
                 <Typography>{option.title}</Typography>
               </MenuItem>
             </>
