@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { AccordionMaker } from '../components'
 import { useTheme } from 'next-themes'
+import { Typography } from '@material-tailwind/react'
 const Home: NextPage = () => {
   const { theme } = useTheme()
   return (
@@ -49,6 +50,14 @@ const Home: NextPage = () => {
         </div>
         {/** Section two ends*/}
       </main>
+
+      {/** Title block */}
+      <div className="h-[50px] flex items-center justify-center text-center">
+        <Typography variant="h3">
+          Welcome to your professional community
+        </Typography>
+      </div>
+      {/** Title block ends*/}
     </>
   )
 }
