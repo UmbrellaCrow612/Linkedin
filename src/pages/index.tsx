@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useTheme } from 'next-themes'
 import { Typography } from '@material-tailwind/react'
+import { AccordionMaker, Section } from '../components'
 const Home: NextPage = () => {
   const { theme } = useTheme()
   return (
@@ -15,15 +16,32 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/**  Grid approach */}
 
-      {/** Title block */}
-      <div className="h-[50px] flex items-center justify-center text-center">
-        <Typography variant="h3">
-          Welcome to your professional community
-        </Typography>
-      </div>
-      {/** Title block ends*/}
+      <Section customTailwind="grid grid-cols-1 grid-rows-2 px-2 py-1 gap-[2px] md:grid-cols-2 md:grid-rows-none">
+        {/** Section 1 */}
+        <div className="overflow-scroll text-center md:flex md:flex-col md:justify-center">
+          {/** Mobile title */}
+          <div className={`xl:hidden`}>
+            <Typography variant="h4">
+              Welcome to your professional community
+            </Typography>
+          </div>
+          {/** Desktop title */}
+          <div className={`hidden xl:block`}>
+            <Typography variant="h2">
+              Welcome to your professional community
+            </Typography>
+          </div>
+          <AccordionMaker Header="Search for a Job" body="filler" />
+          <AccordionMaker Header="Find a person you know" body="filler" />
+          <AccordionMaker Header="Learn a new skill" body="filler" />
+        </div>
+        {/** Section 2 */}
+        <div
+          className="bg-center bg-no-repeat bg-contain"
+          style={{ backgroundImage: 'url(/images/book-reading.jpeg)' }}
+        ></div>
+      </Section>
     </>
   )
 }
