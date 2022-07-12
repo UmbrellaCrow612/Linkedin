@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {  BlockTitleChips, HomeHero, HomeSlideTabs } from '../components'
+import {  BlockTitleChips, HomeHero, HomeSecondHero, HomeSlideTabs } from '../components'
 const Home: NextPage = () => {
   const BlockOneChips = [
     'See All Topic',
@@ -46,6 +46,7 @@ const Home: NextPage = () => {
         chipsArray={BlockThreeChips}
       />
       <HomeSlideTabs />
+      <HomeSecondHero />
     </>
   )
 }
