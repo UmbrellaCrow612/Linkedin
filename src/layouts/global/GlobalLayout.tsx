@@ -9,7 +9,7 @@ export const GlobalLayout: React.FC<GlobalLayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
       <Footer />
     </>
   )
