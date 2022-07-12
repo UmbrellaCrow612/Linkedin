@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {  Typography } from '@material-tailwind/react'
+import { Typography } from '@material-tailwind/react'
 import { AccordionMaker, BlockTitleChips, Section } from '../components'
 const Home: NextPage = () => {
   const BlockOneChips = [
@@ -13,6 +13,16 @@ const Home: NextPage = () => {
     'Freelancer',
     'Salary and compensation',
     'Starting a job',
+  ]
+  const BlockTwoChips = [
+    'Engineering',
+    'Bushiness development',
+    'Finance',
+    'Administrative assistance',
+    'Retail associate',
+    'Customer Service',
+    'Operations',
+    'More',
   ]
   return (
     <>
@@ -54,6 +64,11 @@ const Home: NextPage = () => {
       <BlockTitleChips
         title="Explore topics you are interested in"
         chipsArray={BlockOneChips}
+        separate={ true}
+      />
+      <BlockTitleChips
+        title="Find the right job or internship for you"
+        chipsArray={BlockTwoChips}
       />
     </>
   )
