@@ -1,11 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useTheme } from 'next-themes'
-import { Typography } from '@material-tailwind/react'
-import { AccordionMaker, Section } from '../components'
+import {  Typography } from '@material-tailwind/react'
+import { AccordionMaker, BlockTitleChips, Section } from '../components'
 const Home: NextPage = () => {
-  const { theme } = useTheme()
+  const BlockOneChips = [
+    'See All Topic',
+    'Remote',
+    'Work from Home',
+    'Retirement',
+    'Internships',
+    'Freelancer',
+    'Salary and compensation',
+    'Starting a job',
+  ]
   return (
     <>
       <Head>
@@ -16,7 +24,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {/** accordion and hero image */}
       <Section customTailwind="grid grid-cols-1 grid-rows-2 px-2 py-1 gap-[2px] md:grid-cols-2 md:grid-rows-none">
         {/** Section 1 */}
         <div className="overflow-scroll text-center md:flex md:flex-col md:justify-center">
@@ -42,6 +50,11 @@ const Home: NextPage = () => {
           style={{ backgroundImage: 'url(/images/book-reading.jpeg)' }}
         ></div>
       </Section>
+
+      <BlockTitleChips
+        title="Explore topics you are interested in"
+        chipsArray={BlockOneChips}
+      />
     </>
   )
 }

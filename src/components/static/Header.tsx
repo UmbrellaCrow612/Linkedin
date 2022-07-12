@@ -27,7 +27,7 @@ const options = [
 const Header: React.FC<HeaderProps> = () => {
   return (
     <>
-      <nav className="h-[80px] flex items-center px-4 justify-between max-w-screen-2xl mx-auto">
+      <nav className="h-[80px] z-10 bg-white bg-opacity-70 flex items-center px-4 justify-between max-w-screen-2xl mx-auto sticky top-0">
         {/** Logo */}
         <div className="hidden md:block">
           <Image
