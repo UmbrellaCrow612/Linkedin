@@ -10,18 +10,12 @@ const Home: NextPage = () => {
     'Work from Home',
     'Retirement',
     'Internships',
-    'Freelancer',
-    'Salary and compensation',
-    'Starting a job',
+    "More"
   ]
   const BlockTwoChips = [
     'Engineering',
     'Bushiness development',
     'Finance',
-    'Administrative assistance',
-    'Retail associate',
-    'Customer Service',
-    'Operations',
     'More',
   ]
    const BlockThreeChips = [
