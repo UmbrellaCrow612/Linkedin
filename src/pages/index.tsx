@@ -24,6 +24,9 @@ const Home: NextPage = () => {
     'Operations',
     'More',
   ]
+   const BlockThreeChips = [
+     'Post a job',
+   ]
   return (
     <>
       <Head>
@@ -64,11 +67,15 @@ const Home: NextPage = () => {
       <BlockTitleChips
         title="Explore topics you are interested in"
         chipsArray={BlockOneChips}
-        separate={ true}
+        separate={true}
       />
       <BlockTitleChips
         title="Find the right job or internship for you"
         chipsArray={BlockTwoChips}
+      />
+      <BlockTitleChips
+        title="Post your job for millions of people to see"
+        chipsArray={BlockThreeChips}
       />
     </>
   )
