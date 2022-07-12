@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react'
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
   // Set the hydration of dark and light mode
+
+  // add defaultTheme="system" to the dark theme provider when you get to making dark theme
   useEffect(() => {
     setLoading(true)
   }, [])
@@ -15,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <LoadingSpinner />
   }
   return (
-    <DarkModeThemeProvider defaultTheme="system" attribute="class">
+    <DarkModeThemeProvider attribute="class">
       <ComponentThemeProvider>
         <GlobalLayout>
           <Component {...pageProps} />
