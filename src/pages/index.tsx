@@ -1,15 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import {  BlockTitleChips, HomeHero, HomeSecondHero, HomeSlideTabs } from '../components'
+import { useState, useEffect } from 'react'
+import {
+  BlockTitleChips,
+  HomeHero,
+  HomeSecondHero,
+  HomeSlideTabs,
+  LoadingSpinner,
+} from '../components'
 const Home: NextPage = () => {
+  // Page loading data
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
+  if (isLoading) return <LoadingSpinner />
+
   const BlockOneChips = [
     'See All Topic',
     'Remote',
     'Work from Home',
     'Retirement',
     'Internships',
-    "More"
+    'More',
   ]
   const BlockTwoChips = [
     'Engineering',
@@ -17,9 +31,7 @@ const Home: NextPage = () => {
     'Finance',
     'More',
   ]
-   const BlockThreeChips = [
-     'Post a job',
-   ]
+  const BlockThreeChips = ['Post a job']
   return (
     <>
       <Head>
