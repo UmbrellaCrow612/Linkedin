@@ -27,22 +27,21 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
           <AccordionMaker Header="Find a person you know" body="filler" />
           <AccordionMaker Header="Learn a new skill" body="filler" />
         </div>
-        {/** Section 2 light and dark*/}
-        {theme == "dark" ? (
-          <div
-            className="bg-center bg-no-repeat bg-contain"
-            style={{
-              backgroundImage: 'url(/images/darkMode-hero-1.svg)',
-            }}
-          />
-        ) : (
-          <div
-            className="bg-center bg-no-repeat bg-contain"
-            style={{
-              backgroundImage: 'url(/images/book-reading.jpeg))',
-            }}
-          />
-        )}
+        {/** Section 1 */}
+        {/** Dark */}
+        <div
+          className="hidden bg-center bg-no-repeat bg-contain dark:block"
+          style={{
+            backgroundImage: 'url(/images/darkMode-hero-1.svg)',
+          }}
+        />
+        {/** Light */}
+        <div
+          className="bg-center bg-no-repeat bg-contain dark:hidden"
+          style={{
+            backgroundImage: 'url(/images/book-reading.jpeg)',
+          }}
+        />
       </Section>
     </>
   )
