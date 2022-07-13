@@ -3,6 +3,6 @@
 Built with next js# U
 
 
-# use this for carousel
+# use this for Illustrations 
 
-https://codesandbox.io/s/embla-carousel-lazyload-react-z7xiq
+https://undraw.co/illustrations

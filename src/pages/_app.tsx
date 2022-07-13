@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <LoadingSpinner />
   }
   return (
-    <DarkModeThemeProvider attribute="class">
+    <DarkModeThemeProvider attribute="class" defaultTheme="system">
       <ComponentThemeProvider>
         <GlobalLayout>
           <Component {...pageProps} />

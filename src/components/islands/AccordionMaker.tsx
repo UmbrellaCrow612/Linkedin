@@ -19,7 +19,7 @@ export const AccordionMaker: React.FC<AccordionProps> = ({ Header, body }) => {
   return (
     <>
       <Accordion open={open === 1} onClick={() => handleOpen(1)}>
-        <AccordionHeader>{Header}</AccordionHeader>
+        <AccordionHeader className="dark:text-white">{Header}</AccordionHeader>
         <AccordionBody>{body}</AccordionBody>
       </Accordion>
     </>

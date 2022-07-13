@@ -3,6 +3,8 @@ import { MobileMenu } from '../islands/MobileMenu'
 import { AiOutlineCompass } from 'react-icons/ai'
 import { BsPeople, BsBook } from 'react-icons/bs'
 import { MdOutlineBusinessCenter } from 'react-icons/md'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 interface HeaderProps {}
@@ -25,17 +27,36 @@ const options = [
   },
 ]
 const Header: React.FC<HeaderProps> = () => {
+  const { theme } = useTheme()
+  const [darkModeLogo, setDarkModeLogo] = useState(false)
+  useEffect(() => {
+    if (theme === 'light') setDarkModeLogo(false)
+    if (theme === 'dark') setDarkModeLogo(true)
+  }, [theme])
   return (
     <>
-      <nav className="h-[80px] z-10 bg-white bg-opacity-70 flex items-center px-4 justify-between max-w-screen-2xl mx-auto sticky top-0">
+      <nav className="h-[80px] rounded-xl z-10 dark:bg-[#1b1b1b] bg-white bg-opacity-70 flex items-center px-4 justify-between max-w-screen-2xl mx-auto sticky top-0">
         {/** Logo */}
         <div className="hidden md:block">
-          <Image
-            height={65}
-            width={110}
-            src="/images/logo.png"
-            alt="Linkedin blue logo"
-          />
+          {darkModeLogo ? (
+            <>
+              <Image
+                height={35}
+                width={110}
+                src="/images/darkMode-logo.png"
+                alt="Linkedin blue logo"
+              />
+            </>
+          ) : (
+            <>
+              <Image
+                height={65}
+                width={110}
+                src="/images/logo.png"
+                alt="Linkedin blue logo"
+              />
+            </>
+          )}
         </div>
         {/** Mobile Menu */}
         <MobileMenu />

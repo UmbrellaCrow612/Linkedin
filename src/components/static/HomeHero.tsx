@@ -1,9 +1,17 @@
 import { Typography } from '@material-tailwind/react'
 import { AccordionMaker, Section } from '../../components'
-
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 interface HomeHeroProps {}
 
 export const HomeHero: React.FC<HomeHeroProps> = () => {
+  const { theme } = useTheme()
+  const [darkHeroImage, setDarkHeroImage] = useState(false)
+  useEffect(() => {
+    if (theme === 'light') setDarkHeroImage(false)
+    if (theme === 'dark') setDarkHeroImage(true)
+  }, [theme])
+
   return (
     <>
       {/** accordion and hero image */}
@@ -29,7 +37,13 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
         {/** Section 2 */}
         <div
           className="bg-center bg-no-repeat bg-contain"
-          style={{ backgroundImage: 'url(/images/book-reading.jpeg)' }}
+          style={{
+            backgroundImage: ` ${
+              darkHeroImage
+                ? 'url(/images/darkMode-hero-1.svg)'
+                : 'url(/images/book-reading.jpeg)'
+            }`,
+          }}
         ></div>
       </Section>
     </>

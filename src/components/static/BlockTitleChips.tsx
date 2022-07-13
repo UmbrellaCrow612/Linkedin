@@ -20,7 +20,7 @@ export const BlockTitleChips: React.FC<BlockTitleChipsProps> = ({
         }`}
       >
         {/** Section 1 */}
-        <div className="flex items-center justify-center text-center text-grey-700">
+        <div className="flex items-center justify-center text-center text-grey-700 dark:text-white">
           <Typography variant="h2">{title}</Typography>
         </div>
         {/** Section 2 chips */}

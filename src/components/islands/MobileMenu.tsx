@@ -16,15 +16,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
     <>
       <Menu offset={7} placement="bottom-end">
         <MenuHandler className="md:hidden">
-          <IconButton variant='outlined'>
-            <AiOutlineMenu className="text-2xl cursor-pointer dark:text-white" />
+          <IconButton variant="outlined" className="">
+            <AiOutlineMenu className="text-2xl cursor-pointer" />
           </IconButton>
         </MenuHandler>
-        <MenuList className="w-[300px] h-[300px] flex flex-col justify-between">
+        <MenuList className="w-[300px] h-[300px] flex flex-col justify-between dark:bg-[#121212] dark:border-grey-900 dark:text-white">
           {options.map((option) => (
             <>
               <MenuItem key={option.title} className="flex items-center">
-                <option.Icon className='mr-2 text-2xl'/>
+                <option.Icon className="mr-2 text-2xl" />
                 <Typography>{option.title}</Typography>
               </MenuItem>
             </>

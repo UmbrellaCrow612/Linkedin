@@ -8,7 +8,6 @@ import {
   HomeSlideTabs,
 } from '../components'
 const Home: NextPage = () => {
-
   const BlockOneChips = [
     'See All Topic',
     'Remote',
