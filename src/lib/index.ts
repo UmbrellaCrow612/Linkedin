@@ -1,1 +1,1 @@
-export {}
+export { prisma } from './prisma'
