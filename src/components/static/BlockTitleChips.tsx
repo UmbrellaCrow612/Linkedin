@@ -27,7 +27,7 @@ export const BlockTitleChips: React.FC<BlockTitleChipsProps> = ({
         <div className="flex flex-wrap items-center justify-around overflow-scroll">
           {chipsArray.map((chip) => (
             <>
-              <Button key={chip} variant="outlined">
+              <Button key={chip} variant="outlined" className="dark:border-white dark:text-white">
                 <Typography variant="paragraph">{chip}</Typography>
               </Button>
             </>
