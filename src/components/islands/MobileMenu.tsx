@@ -20,7 +20,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = () => {
             <AiOutlineMenu className="text-2xl cursor-pointer dark:text-white" />
           </IconButton>
         </MenuHandler>
-        <MenuList className="dark:bg-grey-800 dark:text-white">
+        <MenuList className="w-[300px] h-[300px] flex flex-col justify-between">
           {options.map((option) => (
             <>
               <MenuItem key={option.title} className="flex items-center">
