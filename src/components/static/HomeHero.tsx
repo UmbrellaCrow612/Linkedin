@@ -34,17 +34,27 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
           <AccordionMaker Header="Find a person you know" body="filler" />
           <AccordionMaker Header="Learn a new skill" body="filler" />
         </div>
-        {/** Section 2 */}
-        <div
-          className="bg-center bg-no-repeat bg-contain"
-          style={{
-            backgroundImage: ` ${
-              darkHeroImage
-                ? 'url(/images/darkMode-hero-1.svg)'
-                : 'url(/images/book-reading.jpeg)'
-            }`,
-          }}
-        ></div>
+        {/** Section 2 light and dark*/}
+        {darkHeroImage ? (
+          <>
+            {' '}
+            <div
+              className="bg-center bg-no-repeat bg-contain"
+              style={{
+                backgroundImage: 'url(/images/darkMode-hero-1.svg)',
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <div
+              className="bg-center bg-no-repeat bg-contain"
+              style={{
+                backgroundImage: 'url(/images/book-reading.jpeg))',
+              }}
+            />
+          </>
+        )}
       </Section>
     </>
   )
