@@ -28,7 +28,7 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
           <AccordionMaker Header="Learn a new skill" body="filler" />
         </div>
         {/** Section 2 light and dark*/}
-        {theme === "dark" ? (
+        {theme == "dark" ? (
           <div
             className="bg-center bg-no-repeat bg-contain"
             style={{
