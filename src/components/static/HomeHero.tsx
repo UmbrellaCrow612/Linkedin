@@ -36,24 +36,23 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
         </div>
         {/** Section 2 light and dark*/}
         {darkHeroImage ? (
-          <>
-            {' '}
+     
             <div
               className="bg-center bg-no-repeat bg-contain"
               style={{
                 backgroundImage: 'url(/images/darkMode-hero-1.svg)',
               }}
             />
-          </>
+        
         ) : (
-          <>
+         
             <div
               className="bg-center bg-no-repeat bg-contain"
               style={{
                 backgroundImage: 'url(/images/book-reading.jpeg))',
               }}
             />
-          </>
+         
         )}
       </Section>
     </>
