@@ -1,17 +1,10 @@
 import { Typography } from '@material-tailwind/react'
 import { AccordionMaker, Section } from '../../components'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 interface HomeHeroProps {}
 
 export const HomeHero: React.FC<HomeHeroProps> = () => {
   const { theme } = useTheme()
-  const [darkHeroImage, setDarkHeroImage] = useState(false)
-  useEffect(() => {
-    if (theme === 'light') setDarkHeroImage(false)
-    if (theme === 'dark') setDarkHeroImage(true)
-  }, [theme])
-
   return (
     <>
       {/** accordion and hero image */}
@@ -35,24 +28,20 @@ export const HomeHero: React.FC<HomeHeroProps> = () => {
           <AccordionMaker Header="Learn a new skill" body="filler" />
         </div>
         {/** Section 2 light and dark*/}
-        {darkHeroImage ? (
-     
-            <div
-              className="bg-center bg-no-repeat bg-contain"
-              style={{
-                backgroundImage: 'url(/images/darkMode-hero-1.svg)',
-              }}
-            />
-        
+        {theme === "dark" ? (
+          <div
+            className="bg-center bg-no-repeat bg-contain"
+            style={{
+              backgroundImage: 'url(/images/darkMode-hero-1.svg)',
+            }}
+          />
         ) : (
-         
-            <div
-              className="bg-center bg-no-repeat bg-contain"
-              style={{
-                backgroundImage: 'url(/images/book-reading.jpeg))',
-              }}
-            />
-         
+          <div
+            className="bg-center bg-no-repeat bg-contain"
+            style={{
+              backgroundImage: 'url(/images/book-reading.jpeg))',
+            }}
+          />
         )}
       </Section>
     </>
