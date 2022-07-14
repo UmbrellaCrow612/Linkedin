@@ -1,15 +1,12 @@
-// middleware.ts
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { withAuth } from 'next-auth/middleware'
 
-export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone()
-  url.pathname = '/'
+// More on how NextAuth.js middleware works: https://next-auth.js.org/configuration/nextjs#middleware
+export default withAuth({
+  callbacks: {
+    authorized: ({ req, token }) =>
+      // /admin requires admin role, but /me only requires the user to be logged in.
+      req.nextUrl.pathname !== '/feed' || token?.userRole === 'user',
+  },
+})
 
-  if (request.nextUrl.pathname === '/feed') return NextResponse.redirect(url)
-}
-
-// Supports both a single string value or an array of matchers
-export const config = {
-  matcher: ['/feed/:path*'],
-}
+export const config = { matcher: ['/feed'] }

@@ -70,8 +70,12 @@ const Header: React.FC<HeaderProps> = () => {
               </div>
             ))}
             <div className="w-[200px] flex justify-between items-center">
-                <Button variant="outlined" onClick={() => signIn()}>Sign up</Button>
-              <Button variant="filled"  onClick={() => signIn()}>Sign In</Button>
+              <Button variant="outlined" onClick={() => signIn()}>
+                Sign up
+              </Button>
+              <Button variant="filled" onClick={() => signIn()}>
+                Sign In
+              </Button>
             </div>
           </div>
         </nav>

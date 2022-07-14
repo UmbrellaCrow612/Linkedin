@@ -8,8 +8,15 @@ import {
   HomeSlideTabs,
 } from '../components'
 import { useTheme } from 'next-themes'
+import { useEffect } from 'react'
+import { useSession } from 'next-auth/react'
+import Router from 'next/router'
 const Home: NextPage = () => {
-   const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  const { data: session } = useSession()
+  useEffect(() => {
+    if (session) Router.push('/feed')
+  }, [session])
   const BlockOneChips = [
     'See All Topic',
     'Remote',
