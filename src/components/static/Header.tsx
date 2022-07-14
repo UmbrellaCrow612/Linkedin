@@ -6,6 +6,7 @@ import { MdOutlineBusinessCenter } from 'react-icons/md'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { signIn } from 'next-auth/react'
 interface HeaderProps {}
 const options = [
   {
@@ -69,8 +70,8 @@ const Header: React.FC<HeaderProps> = () => {
               </div>
             ))}
             <div className="w-[200px] flex justify-between items-center">
-              <Button variant="outlined">Sign up</Button>
-              <Button variant="filled">Sign In</Button>
+                <Button variant="outlined" onClick={() => signIn()}>Sign up</Button>
+              <Button variant="filled"  onClick={() => signIn()}>Sign In</Button>
             </div>
           </div>
         </nav>
