@@ -1,6 +1,7 @@
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
+import { prisma } from '../../../lib'
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -11,6 +12,7 @@ export const authOptions: NextAuthOptions = {
   theme: {
     colorScheme: 'dark',
   },
+  adapter: PrismaAdapter(prisma),
   callbacks: {
     async jwt({ token }) {
       token.userRole = 'user'

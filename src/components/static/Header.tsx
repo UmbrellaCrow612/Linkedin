@@ -6,7 +6,7 @@ import { MdOutlineBusinessCenter } from 'react-icons/md'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { signIn } from 'next-auth/react'
+import { signIn , signOut} from 'next-auth/react'
 interface HeaderProps {}
 const options = [
   {
@@ -36,7 +36,10 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <>
       {isFeedPage ? (
-        <>Feed Header</>
+        <>
+          <Button variant="outlined" onClick={() => signOut()}>
+                Sign out
+              </Button></>
       ) : (
         <nav className="h-[80px] rounded-xl z-10 dark:bg-[#1b1b1b] bg-white bg-opacity-70 flex items-center px-4 justify-between max-w-screen-2xl mx-auto sticky top-0">
           {/** Logo dark*/}
