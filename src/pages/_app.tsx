@@ -5,6 +5,7 @@ import { ThemeProvider as DarkModeThemeProvider } from 'next-themes'
 import { GlobalLayout } from '../layouts'
 import { LoadingSpinner } from '../components'
 import { useEffect, useState } from 'react'
+import { SessionProvider } from 'next-auth/react'
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false)
   // Set the hydration of dark and light mode
@@ -17,13 +18,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     return <LoadingSpinner />
   }
   return (
-    <DarkModeThemeProvider attribute="class" defaultTheme="system">
-      <ComponentThemeProvider>
-        <GlobalLayout>
-          <Component {...pageProps} />
-        </GlobalLayout>
-      </ComponentThemeProvider>
-    </DarkModeThemeProvider>
+    <SessionProvider session={pageProps.session} refetchInterval={0}>
+      <DarkModeThemeProvider attribute="class" defaultTheme="system">
+        <ComponentThemeProvider>
+          <GlobalLayout>
+            <Component {...pageProps} />
+          </GlobalLayout>
+        </ComponentThemeProvider>
+      </DarkModeThemeProvider>
+    </SessionProvider>
   )
 }
 
