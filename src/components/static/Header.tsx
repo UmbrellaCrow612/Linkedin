@@ -31,6 +31,7 @@ const Header: React.FC<HeaderProps> = () => {
   const [isFeedPage, setIsFeedPage] = useState(false)
   useEffect(() => {
     if (router.pathname === '/feed') setIsFeedPage(true)
+    if (router.pathname === '/') setIsFeedPage(false)
   }, [router.pathname])
 
   return (
